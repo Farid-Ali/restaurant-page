@@ -1,7 +1,3 @@
-function testComponent() {
-  const element = document.createElement('p');
-  element.textContent = 'Setup works!';
-  return element;
-}
+import initWebsite from "./initWebsite";
 
-document.body.appendChild(testComponent());
+initWebsite();
