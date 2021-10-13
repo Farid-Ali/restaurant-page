@@ -1,64 +1,41 @@
-const home = (() => {
-  const main = document.createElement("main");
-  main.classList.add("main");
+import domContent from "../util/domContent";
 
-  const createHome = () => main;
+const home = (() => {
+  const _main = document.createElement("main");
+  _main.classList.add("main");
+
+  const createHome = () => _main;
+
+  const _domContent = domContent();
 
   const _createRestaurantName = (restaurantName) => {
-    const restaurantNameContainer = document.createElement("div");
-    restaurantNameContainer.classList.add("restaurant-name-container");
-
-    const restaurantNameElement = document.createElement("h1");
-    restaurantNameElement.textContent = restaurantName;
-
-    restaurantNameContainer.appendChild(restaurantNameElement);
-    main.appendChild(restaurantNameContainer);
+    _main.appendChild(_domContent.createHeading(restaurantName));
   };
 
   const _createAboutRestaurant = (aboutRestaurant) => {
-    const aboutRestaurantContainer = document.createElement("div");
-
-    const aboutRestaurantElement = document.createElement("p");
-    aboutRestaurantElement.textContent = aboutRestaurant;
-
-    aboutRestaurantContainer.appendChild(aboutRestaurantElement);
-    main.appendChild(aboutRestaurantContainer);
+    _main.appendChild(_domContent.createParagraph(aboutRestaurant));
   };
 
   const _createWorkingHours = (workingHoursList) => {
     const workingHoursContainer = document.createElement("div");
 
-    const workingHoursHeading = document.createElement("h4");
-    workingHoursHeading.classList.add("content-heading");
-    workingHoursHeading.textContent = "Working Hours";
+    workingHoursContainer.appendChild(
+      _domContent.createHeading("Working Hours")
+    );
+    workingHoursContainer.appendChild(
+      _domContent.createUnorderedList(workingHoursList)
+    );
 
-    workingHoursContainer.appendChild(workingHoursHeading);
-
-    const ul = document.createElement("ul");
-    workingHoursList.forEach((element) => {
-      const li = document.createElement("li");
-      li.textContent = element;
-      ul.appendChild(li);
-    });
-
-    workingHoursContainer.appendChild(ul);
-    main.appendChild(workingHoursContainer);
+    _main.appendChild(workingHoursContainer);
   };
 
   const _createLocation = (locationText) => {
     const locationContainer = document.createElement("div");
 
-    const locationHeading = document.createElement("h4");
-    locationHeading.classList.add("content-heading");
-    locationHeading.textContent = "Locate Us";
+    locationContainer.appendChild(_domContent.createHeading("Locate Us"));
+    locationContainer.appendChild(_domContent.createParagraph(locationText));
 
-    locationContainer.appendChild(locationHeading);
-
-    const locationElement = document.createElement("p");
-    locationElement.textContent = locationText;
-    locationContainer.appendChild(locationElement);
-
-    main.appendChild(locationContainer);
+    _main.appendChild(locationContainer);
   };
 
   const aboutRestaurant = (name, about, workingHours, location) => {

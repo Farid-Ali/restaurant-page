@@ -1,26 +1,19 @@
+import domContent from "../util/domContent";
+
 const contract = (() => {
-  const contractContainer = document.createElement("div");
+  const _contractContainer = document.createElement("div");
+  const _domContent = domContent();
 
-  const createContract = () => contractContainer;
+  const createContract = () => _contractContainer;
 
-  const contractHeading = document.createElement("h1");
-  contractHeading.textContent = "Contract Us";
-  contractContainer.appendChild(contractHeading);
-
-  const contractDetail = document.createElement("ul");
-
-  const setContractDetail = (role, phNo, email) => {
-    let contractDetailList = [];
-    contractDetailList.push(role, phNo, email);
-
-    contractDetailList.forEach((element) => {
-      const contractDetailElement = document.createElement("li");
-      contractDetailElement.textContent = element;
-      contractDetail.appendChild(contractDetailElement);
-    });
-    contractContainer.appendChild(contractDetail);
-  };
-  setContractDetail("Manager", "1234567890", "notfake@email.com");
+  _contractContainer.appendChild(_domContent.createHeading("contract Us"));
+  _contractContainer.appendChild(
+    _domContent.createUnorderedList([
+      "Manager",
+      "1234567890",
+      "notfake@email.com",
+    ])
+  );
 
   return {
     createContract,

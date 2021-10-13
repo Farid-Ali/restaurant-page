@@ -1,22 +1,18 @@
+import domContent from "../util/domContent";
+
 const menuItem = (category, title, description, price) => {
+  const _domContent = domContent();
+
   const getCategory = () => category;
-  const menuContainer = document.createElement("div");
-  const getMenuItem = () => menuContainer;
+  const _menuContainer = document.createElement("div");
+  const getMenuItem = () => _menuContainer;
 
-  const setMenuItem = () => {
-    const menuTitle = document.createElement("h4");
-    menuTitle.textContent = title;
-    menuContainer.appendChild(menuTitle);
-
-    const menuPrice = document.createElement("p");
-    menuPrice.textContent = price;
-    menuContainer.appendChild(menuPrice);
-
-    const menuDescription = document.createElement("p");
-    menuDescription.textContent = description;
-    menuContainer.appendChild(menuDescription);
+  const _setMenuItem = () => {
+    _menuContainer.appendChild(_domContent.createHeading(title));
+    _menuContainer.appendChild(_domContent.createParagraph(price));
+    _menuContainer.appendChild(_domContent.createParagraph(description));
   };
-  setMenuItem();
+  _setMenuItem();
 
   return {
     getCategory,
@@ -41,7 +37,7 @@ const frenchToast = menuItem(
 const menu = (() => {
   const createMenu = () => {
     const menuContainer = document.createElement("div");
-    menuContainer.classList.add("menuContainer");
+
     menuContainer.appendChild(butterTea.getMenuItem());
     menuContainer.appendChild(frenchToast.getMenuItem());
 
