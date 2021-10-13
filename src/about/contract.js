@@ -1,11 +1,11 @@
 const contract = (() => {
-  const main = document.createElement("div");
+  const contractContainer = document.createElement("div");
 
-  const createContract = () => main;
+  const createContract = () => contractContainer;
 
   const contractHeading = document.createElement("h1");
   contractHeading.textContent = "Contract Us";
-  main.appendChild(contractHeading);
+  contractContainer.appendChild(contractHeading);
 
   const contractDetail = document.createElement("ul");
 
@@ -18,7 +18,7 @@ const contract = (() => {
       contractDetailElement.textContent = element;
       contractDetail.appendChild(contractDetailElement);
     });
-    main.appendChild(contractDetail);
+    contractContainer.appendChild(contractDetail);
   };
   setContractDetail("Manager", "1234567890", "notfake@email.com");
 
