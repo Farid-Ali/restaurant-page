@@ -8,6 +8,8 @@ const navigation = (() => {
     navItems.forEach((element) => {
       const li = document.createElement("li");
       const btn = document.createElement("button");
+      btn.classList.add("button-nav");
+      btn.setAttribute("id", `${element.split(" ")[0]}`);
       btn.textContent = element;
       li.appendChild(btn);
 
