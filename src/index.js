@@ -1,3 +1,3 @@
-import initWebsite from "./initWebsite";
+import initWebsite from './initWebsite';
 
 initWebsite();

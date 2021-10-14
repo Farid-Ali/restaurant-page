@@ -1,4 +1,4 @@
-import domContent from "./domContent";
+import domContent from './domContent';
 
 const footer = (() => {
   const createFooter = (copywriteOwner) => {
@@ -6,7 +6,7 @@ const footer = (() => {
     const thisYear = today.getFullYear(0);
     const _domContent = domContent();
 
-    const footer = document.createElement("footer");
+    const footer = document.createElement('footer');
 
     footer.appendChild(
       _domContent.createParagraph(

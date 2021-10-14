@@ -5,15 +5,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "init-lint": "eslint --init",
+    "lint": "eslint src/**"
   },
   "author": "Farid",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.2.0",
+    "eslint": "^8.0.1",
     "html-webpack-plugin": "^5.3.2",
     "style-loader": "^3.2.1",
     "webpack": "^5.49.0",
     "webpack-cli": "^4.7.2"
-  }
+  },
+  "dependencies": {}
 }
