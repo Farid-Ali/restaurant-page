@@ -17,6 +17,8 @@ function mainComponent() {
     navigation.createNavigation(['Home', 'Menu', 'Contract Us'])
   );
 
+  //comment added for git test
+
   const homeCreation = () => {
     home.aboutRestaurant(
       'The Testy Corner',
